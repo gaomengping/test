@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<!--   公共样式-->
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
+<!--    主页面样式-->
+    <link rel="stylesheet" href="./css/index_1.css" type="text/css">
+<!--    浏览器兼容-->
+    <script src="js/rem.js"></script>
+
+    <title>主页面</title>
+</head>
+<body>
+<div class="index_public">
+<!--    头部-->
+    <div class="index_head">
+        <p><span>&lt;</span><span>市人社局</span></p>
+    </div>
+<!--    中间-->
+    <div class="div_center">
+        <div class="index_center">
+            <p>在我们的项目中，页面顶部有一个position: fixed定位的导航，导航栏有一个touch事件。当我的页面随着滚动条滚动之后，touch事件失效。
+                其实对于这个问题，我找到了解决方案，但是产生的原因还不太清楚(我认为这是一个浏览器的bug，首先怀疑别人，我怎么会写出bug)。
+                解决方案就是将这个touch事件放在window对象上监听，用冒泡的方法判断e.target执行回调。代码如下
+                作者：HelenYin
+                链接：https://www.jianshu.com/p/2cf8ef6c9b93
+                来源：简书
+                著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+            <p>在我们的项目中，页面顶部有一个position: fixed定位的导航，导航栏有一个touch事件。当我的页面随着滚动条滚动之后，touch事件失效。
+                其实对于这个问题，我找到了解决方案，但是产生的原因还不太清楚(我认为这是一个浏览器的bug，首先怀疑别人，我怎么会写出bug)。
+                解决方案就是将这个touch事件放在window对象上监听，用冒泡的方法判断e.target执行回调。代码如下
+                作者：HelenYin
+                链接：https://www.jianshu.com/p/2cf8ef6c9b93
+                来源：简书
+                著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+            <p>在我们的项目中，页面顶部有一个position: fixed定位的导航，导航栏有一个touch事件。当我的页面随着滚动条滚动之后，touch事件失效。
+                其实对于这个问题，我找到了解决方案，但是产生的原因还不太清楚(我认为这是一个浏览器的bug，首先怀疑别人，我怎么会写出bug)。
+                解决方案就是将这个touch事件放在window对象上监听，用冒泡的方法判断e.target执行回调。代码如下
+                作者：HelenYin
+                链接：https://www.jianshu.com/p/2cf8ef6c9b93
+                来源：简书
+                著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+            <p>在我们的项目中，页面顶部有一个position: fixed定位的导航，导航栏有一个touch事件。当我的页面随着滚动条滚动之后，touch事件失效。
+                其实对于这个问题，我找到了解决方案，但是产生的原因还不太清楚(我认为这是一个浏览器的bug，首先怀疑别人，我怎么会写出bug)。
+                解决方案就是将这个touch事件放在window对象上监听，用冒泡的方法判断e.target执行回调。代码如下
+                作者：HelenYin
+                链接：https://www.jianshu.com/p/2cf8ef6c9b93
+                来源：简书
+                著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+            <p>在我们的项目中，页面顶部有一个position: fixed定位的导航，导航栏有一个touch事件。当我的页面随着滚动条滚动之后，touch事件失效。
+                其实对于这个问题，我找到了解决方案，但是产生的原因还不太清楚(我认为这是一个浏览器的bug，首先怀疑别人，我怎么会写出bug)。
+                解决方案就是将这个touch事件放在window对象上监听，用冒泡的方法判断e.target执行回调。代码如下
+                作者：HelenYin
+                链接：https://www.jianshu.com/p/2cf8ef6c9b93
+                来源：简书
+                著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+        </div>
+        <div class="geng_duo"><p class="btn"><span>点击查看更多</span></p></div>
+    </div>
+
+
+<!--    底部-->
+
+</div>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    //加载页面
+    $(document).ready(function () {
+        //默认兄弟隐藏不包括本身siblings
+        $('.index_center p').siblings().next().hide();
+        //用来判断收起和展示
+        textFlag = true;
+      $('.btn').on('click',function() {
+          if(textFlag){
+              $(".btn span").text("收起");
+              textFlag = false
+          }else {
+              $(".btn span").text("点击查看更多");
+              textFlag = true
+          }
+          $('.index_center p').siblings().next().toggle();
+      })
+    })
+</script>
+</body>
+</html>
